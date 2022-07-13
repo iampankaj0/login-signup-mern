@@ -19,14 +19,14 @@ const App = () => {
       <Provider template={AlertTemplate} {...options}>
         <Router>
           <Switch>
-            <Route path="/">
+            <Route exact path="/">
               {user && user._id ? (
                 <Homepage setLoginUser={setLoginUser} />
               ) : (
                 <Login setLoginUser={setLoginUser} />
               )}
             </Route>
-            <Route exact path="/login">
+            <Route path="/login">
               <Login setLoginUser={setLoginUser} />
             </Route>
             <Route path="/register">
