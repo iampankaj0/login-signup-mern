@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import { useAlert } from "react-alert";
 import "./login.css";
 
-const Login = ({ setLoginUser }) => {
+const Login = ({ addUserLocal }) => {
   let history = useHistory();
   const alert = useAlert();
 
@@ -26,7 +26,7 @@ const Login = ({ setLoginUser }) => {
     if (email && password) {
       axios.post("http://localhost:9002/login", user).then((res) => {
         alert.show(res.data.message);
-        setLoginUser(res.data.user);
+        addUserLocal(res.data.user);
         history.push("/");
       });
     } else {

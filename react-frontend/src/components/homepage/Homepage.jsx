@@ -1,11 +1,11 @@
 import React from "react";
 import "./homepage.css";
 
-const Homepage = ({ setLoginUser }) => {
+const Homepage = ({ addUserLocal, user }) => {
   return (
     <div className="homepage">
-      <h1>Hello Homepage</h1>
-      <div className="button" onClick={() => setLoginUser({})}>
+      <h1>Hello {user.name} </h1>
+      <div className="button" onClick={(() => addUserLocal([]))}>
         Logout
       </div>
     </div>
